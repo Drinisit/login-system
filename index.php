@@ -22,15 +22,15 @@
         <br>
         <h3>Signup</h3>
         <form action="includes/signup.inc.php" method="post">
-            <input type="text" name="username" placeholder="Username"><br>
-            <input type="password" name="pwd" placeholder="Password"><br>
-            <input type="text" name="email" placeholder="Email"><br>
+           <?php
+                signup_inputs();
+           ?>
             <button>Signup</button>
         </form>
 
-        <?php
-            check_signup_errors();
-        ?>
+            <?php
+                check_signup_errors();
+            ?>
 
     </main>
 </body>
