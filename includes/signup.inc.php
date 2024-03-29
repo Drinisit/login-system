@@ -33,8 +33,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         if($errors){
             $_SESSION["errors_signup"] = $errors;
             header("Location: ../index.php");
+            die();
         }
 
+        create_user($pdo, $pwd, $username , $email);
+
+        header("Location: ../index.php?signup=success");
+        $pdo = null;
+        $stmt = null;
+         die();
 
         
     } catch (PDOException $e) {
